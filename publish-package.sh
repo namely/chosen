@@ -10,15 +10,15 @@ if [ $CURRENT_BRANCH != 'master' ] ; then
 fi
 
 CHOSEN_VERSION=`git tag --sort=v:refname | tail -1`
-GITHUB_URL=https://pfiller:${GH_TOKEN}@github.com/harvesthq/chosen-package.git
+GITHUB_URL=https://github.com/namely/chosen-js.git
 
 git clone $GITHUB_URL
-rm -rf chosen-package/*
-cp README.md public/*.json public/*.png public/*.js public/*.css public/LICENSE* chosen-package/
-cp package-travis.yml chosen-package/.travis.yml
-cd chosen-package
+rm -rf chosen-js
+cp README.md public/*.json public/*.png public/*.js public/*.css public/LICENSE* chosen-js/
+cp package-travis.yml chosen-js/.travis.yml
+cd chosen-js
 
-git config user.email "chosen@getharvest.com"
+git config user.email "admin@namely.com"
 git config user.name "chosen-package"
 
 LATEST_VERSION=`git tag --sort=v:refname | tail -1`
